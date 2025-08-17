@@ -234,7 +234,7 @@ class ImageOptimizerPlatform {
     final inputFile = File(inputPath);
     final directory = inputFile.parent.path;
     final nameWithoutExtension =
-        inputFile.path.split('/').last.split('.').first;
+        inputFile.path.split(RegExp(r'[/\\]')).last.split('.').first;
 
     String extension;
     switch (options.outputFormat) {
@@ -252,6 +252,6 @@ class ImageOptimizerPlatform {
         break;
     }
 
-    return '$directory/${nameWithoutExtension}_optimized.$extension';
+    return '$directory${Platform.pathSeparator}${nameWithoutExtension}_optimized.$extension';
   }
 }
