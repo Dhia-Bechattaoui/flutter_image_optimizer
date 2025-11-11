@@ -2,19 +2,25 @@
 
 [![Pub](https://img.shields.io/pub/v/flutter_image_optimizer.svg)](https://pub.dev/packages/flutter_image_optimizer)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Flutter](https://img.shields.io/badge/Flutter-3.10+-blue.svg)](https://flutter.dev)
+[![Flutter](https://img.shields.io/badge/Flutter-3.32+-blue.svg)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-3.8+-blue.svg)](https://dart.dev)
+[![Pana](https://img.shields.io/badge/Pana-160%2F160-brightgreen.svg)](https://pub.dev/packages/pana)
 
 A powerful Flutter package for automatic image optimization, compression, and format conversion. Optimize your images to reduce file sizes while maintaining quality, perfect for mobile apps that need to handle images efficiently.
 
+<img src="assets/example.gif" width="300" alt="Example Demo">
+
 ## Features
 
-🚀 **High Performance**: Fast image processing with minimal memory usage
-🖼️ **Multiple Formats**: Support for JPEG, PNG, WebP with automatic format detection
-📏 **Smart Resizing**: Resize images with optional aspect ratio preservation
-⚡ **Quality Control**: Adjustable quality settings for lossy formats
-🔍 **Auto-detection**: Intelligent format selection based on image characteristics
-📊 **Detailed Metrics**: Comprehensive optimization statistics and timing
-🛡️ **Error Handling**: Robust error handling with detailed result reporting
+🚀 **High Performance**: Fast image processing with minimal memory usage  
+🖼️ **Multiple Formats**: Support for JPEG, PNG, WebP with automatic format detection  
+📏 **Smart Resizing**: Resize images with optional aspect ratio preservation  
+⚡ **Quality Control**: Adjustable quality settings for lossy formats  
+🔍 **Auto-detection**: Intelligent format selection based on image characteristics  
+📊 **Detailed Metrics**: Comprehensive optimization statistics and timing  
+🛡️ **Error Handling**: Robust error handling with detailed result reporting  
+📦 **Perfect Quality**: 160/160 Pana score with 100% API documentation coverage  
+🌐 **Cross-Platform**: Full support for iOS, Android, Web, Windows, macOS, and Linux
 
 ## Installation
 
@@ -22,7 +28,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  flutter_image_optimizer: ^0.0.3
+  flutter_image_optimizer: ^0.1.0
 ```
 
 Then run:
@@ -30,6 +36,20 @@ Then run:
 ```bash
 flutter pub get
 ```
+
+### WebP Encoding Requirements
+
+**Note**: WebP encoding requires `libwebp` to be installed on your system. If `libwebp` is not available, WebP encoding requests will gracefully fall back to optimized JPEG encoding.
+
+**Installing libwebp**:
+
+- **macOS**: `brew install webp`
+- **Linux**: Usually available via package manager (e.g., `sudo apt-get install libwebp-dev` on Ubuntu/Debian)
+- **Windows**: Download from [Google's WebP downloads page](https://developers.google.com/speed/webp/docs/precompiled) or use a package manager like Chocolatey
+- **Android/iOS**: WebP encoding is not currently supported on mobile platforms (falls back to JPEG)
+- **Web**: WebP encoding is not available in browser environments (falls back to JPEG)
+
+The package will automatically detect if WebP encoding is available and use it when possible. If not available, it will use optimized JPEG encoding which provides similar compression benefits.
 
 ## Quick Start
 
@@ -157,6 +177,7 @@ Supported output formats:
 - `OutputFormat.jpeg` - JPEG format (lossy, good for photos)
 - `OutputFormat.png` - PNG format (lossless, good for graphics)
 - `OutputFormat.webp` - WebP format (modern, efficient)
+  - **Note**: Requires `libwebp` to be installed on the system. Falls back to JPEG if not available.
 
 ### OptimizationResult
 
@@ -194,11 +215,17 @@ class OptimizationResult {
 - ✅ Linux
 - ✅ Web (with limitations)
 
+## Requirements
+
+- **Dart SDK**: >=3.8.0
+- **Flutter**: >=3.32.0
+
 ## Dependencies
 
-- `image: ^4.1.7` - Core image processing capabilities
-- `path_provider: ^2.1.2` - File system access utilities
-- `permission_handler: ^11.3.0` - Permission management for file access
+- `image: ^4.0.0` - Core image processing capabilities
+- `path_provider: ^2.0.0` - File system access utilities
+- `permission_handler: ^12.0.0` - Permission management for file access
+- `ffi: ^2.0.0` - Foreign Function Interface for WebP encoding (native platforms only)
 
 ## Contributing
 

@@ -7,7 +7,8 @@ import 'platform_detector.dart';
 // On web/WASM, this imports `image_optimizer_web.dart` (no dart:io).
 // On native (io), this imports `image_optimizer_native_impl.dart` (uses dart:io).
 import 'image_optimizer_web.dart'
-    if (dart.library.io) 'image_optimizer_native_impl.dart' as impl;
+    if (dart.library.io) 'image_optimizer_native_impl.dart'
+    as impl;
 
 /// Cross-platform image optimization facade.
 ///
@@ -17,7 +18,12 @@ import 'image_optimizer_web.dart'
 /// The class automatically selects the appropriate implementation based on the
 /// current platform and provides methods for both file-based and byte-based
 /// image optimization.
+///
+/// This class cannot be instantiated. Use the static methods instead.
 class ImageOptimizer {
+  /// Private constructor to prevent instantiation.
+  ImageOptimizer._();
+
   /// Optimizes an image file on the local filesystem.
   ///
   /// [inputPath] should be the path to the input image file.

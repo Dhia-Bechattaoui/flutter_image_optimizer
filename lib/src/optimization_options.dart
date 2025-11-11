@@ -18,6 +18,13 @@ class OptimizationOptions {
   /// Maximum file size in bytes (null for no limit)
   final int? maxFileSize;
 
+  /// Creates a new [OptimizationOptions] instance.
+  ///
+  /// [quality] defaults to 85 (0-100 range).
+  /// [targetWidth] and [targetHeight] are optional for resizing.
+  /// [maintainAspectRatio] defaults to true.
+  /// [outputFormat] defaults to [OutputFormat.auto].
+  /// [maxFileSize] is optional and enforces a maximum file size limit.
   const OptimizationOptions({
     this.quality = 85,
     this.targetWidth,

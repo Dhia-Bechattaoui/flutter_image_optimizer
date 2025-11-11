@@ -21,6 +21,10 @@ class OptimizationResult {
   /// Processing time in milliseconds
   final int processingTimeMs;
 
+  /// Creates a new [OptimizationResult] instance.
+  ///
+  /// Prefer using [OptimizationResult.success] or [OptimizationResult.failure]
+  /// factory constructors instead of this constructor directly.
   const OptimizationResult({
     required this.success,
     this.outputPath,

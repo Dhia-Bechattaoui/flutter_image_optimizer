@@ -2,10 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [0.1.0] - 2025-01-11
+
+### Added
+- **Perfect Pana Score**: Achieved 160/160 points for package quality
+- **Library Documentation**: Added comprehensive library-level documentation
+- **Constructor Documentation**: Added documentation for all public constructors
+- **Image Preview**: Added image preview and dimensions display in example app
+- **Format Detection**: Added automatic format detection for output files
+
+### Changed
+- **SDK Requirements**: Updated Dart SDK to >=3.8.0 and Flutter to >=3.32.0
+- **Package Metadata**: Added topics (flutter, image, optimization, compression, webp)
+- **Funding Information**: Added GitHub Sponsors funding link
+- **PNG maxFileSize Enforcement**: Improved PNG maxFileSize enforcement to convert to JPEG when needed
+- **Code Formatting**: Applied Dart formatter to all source files
+
+### Fixed
+- **PNG maxFileSize Bug**: Fixed issue where PNG format with maxFileSize wasn't properly enforced
+- **Linting Issues**: Fixed all linting warnings and formatting issues
+- **Documentation Coverage**: Achieved 100% API documentation coverage
+- **Static Analysis**: Resolved all static analysis issues for perfect score
 
 ## [0.0.3] - 2024-12-19
 
@@ -18,12 +40,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Conditional Export Strategy**: Updated export strategy to default to WASM-safe implementations
 - **Platform Routing**: Improved platform detection and routing for optimal performance
 - **Import Chain**: Restructured import chain to avoid unconditional dart:io imports
-
-### Technical Improvements
-- Default to stub implementations on non-IO runtimes (WASM/web)
-- Only use dart:io-based implementations when io library is available
-- Enhanced conditional import system for better platform compatibility
-- Maintained full native functionality while ensuring WASM compatibility
 
 ### Fixed
 - **WASM Runtime Issues**: Resolved package compatibility with Dart WebAssembly runtime
@@ -42,15 +58,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Enhanced Platform Compatibility**: Resolved dart:io web compatibility issues
 - **Improved Package Structure**: Better conditional import handling for cross-platform support
 
-### Technical Improvements
-- Conditional import implementation for web compatibility
-- Maintained full native functionality while adding web support
-- All optimization features work seamlessly across platforms
-
-### Added
-- Initial project setup
-- Basic project structure and documentation
-
 ## [0.0.1] - 2024-08-10
 
 ### Added
@@ -67,35 +74,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Processing time measurement
 - File size reduction statistics
 
-### Features
-- **Image Optimization**: Compress images while maintaining quality
-- **Format Conversion**: Convert between JPEG, PNG, and WebP formats
-- **Smart Resizing**: Resize images with optional aspect ratio preservation
-- **Quality Control**: Adjustable quality settings for lossy formats
-- **Auto-detection**: Intelligent format selection based on image content
-- **Performance Metrics**: Detailed optimization statistics and timing
-
-### Supported Formats
-- **Input**: JPEG, PNG, WebP, BMP, TIFF, and other common formats
-- **Output**: JPEG, PNG, WebP with automatic format selection
-
-### Dependencies
-- `image: ^4.1.7` - Core image processing capabilities
-- `path_provider: ^2.1.2` - File system access utilities
-- `permission_handler: ^11.3.0` - Permission management for file access
-
----
-
-## Version History
-
-- **0.0.3**: Added WASM compatibility and enhanced platform detection system
-- **0.0.2**: Added web platform support and achieved perfect Pana score (160/160)
-- **0.0.1**: Initial release with core image optimization functionality
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+[Unreleased]: https://github.com/Dhia-Bechattaoui/flutter_image_optimizer/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/Dhia-Bechattaoui/flutter_image_optimizer/compare/v0.0.3...v0.1.0
+[0.0.3]: https://github.com/Dhia-Bechattaoui/flutter_image_optimizer/compare/v0.0.2...v0.0.3
+[0.0.2]: https://github.com/Dhia-Bechattaoui/flutter_image_optimizer/compare/v0.0.1...v0.0.2
+[0.0.1]: https://github.com/Dhia-Bechattaoui/flutter_image_optimizer/releases/tag/v0.0.1
